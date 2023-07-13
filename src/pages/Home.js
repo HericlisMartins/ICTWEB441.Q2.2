@@ -129,9 +129,9 @@ function App() {
             </Grid>
           </Grid>
         </section>
-
-        <ContactPage id="contact"></ContactPage>
-
+        <section id="contact">
+          <ContactPage></ContactPage>
+        </section>
         <section id="github-contributions">
           <Typography variant="h2" component="h2" sx={{ mt: 4 }}>
             GitHub Contributions
