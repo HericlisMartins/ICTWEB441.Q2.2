@@ -49,8 +49,8 @@ const ContactForm = () => {
               fullWidth
               name="name"
               margin="normal"
-            />
-            {errors.message && <Alert severity="error">{errors.message}</Alert>}
+            />{" "}
+            {errors.email && <Alert severity="error">{errors.email}</Alert>}
             <TextField
               label="Email"
               variant="outlined"
@@ -58,7 +58,7 @@ const ContactForm = () => {
               name="email"
               margin="normal"
             />
-            {errors.email && <Alert severity="error">{errors.email}</Alert>}
+            {errors.message && <Alert severity="error">{errors.message}</Alert>}
             <TextField
               label="Message"
               variant="outlined"
