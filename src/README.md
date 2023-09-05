@@ -1,6 +1,8 @@
 ## stackblitz/github  
 
 https://github.com/HericlisMartins/unsplash-gallery-mindroom
+
+## Run it online on: 
 https://stackblitz.com/edit/stackblitz-starters-z4nykc
 
 ## HOW TO INSTALL
@@ -13,7 +15,9 @@ Make sure you have nodejs installed and call it's package manager to install:
 
 npm install
 
-the dependencies bellow should be installed and the app run.
+The dependencies should be installed the run with 
+
+npm run start
 
 ~~~javascript  
 dependencies: {
