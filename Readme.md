@@ -1,13 +1,13 @@
 ## stackblitz/github  
 
-https://github.com/HericlisMartins/ICTWEB441.Q2.2.git
+https://github.com/HericlisMartins/unsplash-gallery-mindroom
 
-Online Editor:
-https://stackblitz.com/edit/stackblitz-starters-cnemnk
+## Run it online on: 
+https://stackblitz.com/edit/stackblitz-starters-z4nykc
 
 ## HOW TO INSTALL
 
-Extract the zip and open it on terminal:
+After discompact to the chosen folder open it on terminal:
 
 cd app/
 
@@ -15,7 +15,9 @@ Make sure you have nodejs installed and call it's package manager to install:
 
 npm install
 
-the dependencies bellow should be installed and the app run.
+The dependencies should be installed the run with 
+
+npm run start
 
 ~~~javascript  
 dependencies: {
@@ -27,6 +29,7 @@ dependencies: {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^4.0.0",
+    "react-material-ui-carousel": "^3.4.2",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
