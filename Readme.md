@@ -36,3 +36,7 @@ dependencies: {
 ~~~  
 
 
+## ENV FOR THE DYNAMIC GALLERY
+Create a .env file on the main folder and add the following:
+
+REACT_APP_UNSPLASHACESSKEY=qz6nkAPzdFIKRt69hH66Sm6JWSHnlV2rYEYohxtM_XU
