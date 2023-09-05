@@ -1,18 +1,14 @@
-import './index.css';
+import "./index.css";
 
-import React from 'react';
-import { render } from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
 
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from "@mui/material/CssBaseline";
 
-import Layout from './components/Layout';
-import Home from './pages/Home';
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
 
 export default function App() {
   return (

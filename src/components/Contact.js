@@ -1,45 +1,68 @@
 import React, { useState } from "react";
 
-import { Button, Container, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, TextField, Typography } from "@mui/material";
 
-const ContactPage = () => {
+const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Logic to handle form submission
+    // Get form input values
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
 
-    // Simulating form submission success
+    // Validate form input values
+    const errors = {};
+    if (!name) {
+      errors.name = "Name is required";
+    }
+    if (!email) {
+      errors.email = "Email is required";
+    }
+    if (!message) {
+      errors.message = "Message is required";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      return setErrors(errors);
+    }
+
     setIsSubmitted(true);
   };
 
   return (
-    <Container maxWidth="xl">
+    <Box>
       {isSubmitted ? (
         <Typography variant="h6" align="center" gutterBottom>
-          Thank you for your message!
+          <Alert severity="success"> Thank you for your message!!</Alert>
         </Typography>
       ) : (
         <>
-          <Typography variant="h4" component="h1" align="center" gutterBottom>
-            Contact Me
-          </Typography>
           <form onSubmit={handleSubmit}>
+            {errors.name && <Alert severity="error">{errors.name}</Alert>}
             <TextField
               label="Name"
               variant="outlined"
               fullWidth
+              name="name"
               margin="normal"
             />
+            {errors.message && <Alert severity="error">{errors.message}</Alert>}
             <TextField
               label="Email"
               variant="outlined"
               fullWidth
+              name="email"
               margin="normal"
             />
+            {errors.email && <Alert severity="error">{errors.email}</Alert>}
             <TextField
               label="Message"
               variant="outlined"
+              name="message"
               multiline
               rows={4}
               fullWidth
@@ -57,8 +80,8 @@ const ContactPage = () => {
           </form>
         </>
       )}
-    </Container>
+    </Box>
   );
 };
 
-export default ContactPage;
+export default ContactForm;

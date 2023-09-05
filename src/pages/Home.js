@@ -1,148 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 
-import {
-  AppBar,
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Link,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Link, Paper, Stack, Toolbar, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-import ContactPage from "../components/Contact";
+import ContactForm from "../components/Contact";
+import Gallery from "../components/Gallery";
 import GitHubContributions from "../components/GitHubContributions";
 
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  textAlign: "center",
+  justifyContent: "center",
+  display: "grid",
+  color: theme.palette.text.secondary,
+}));
+
 function App() {
+  const [images, setimages] = useState([]);
+
   return (
     <div>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Portfolio
+            Dynamic Functionalities
           </Typography>
           <nav>
-            <Link href="#about" color="inherit" underline="none" sx={{ mr: 2 }}>
-              About
-            </Link>
             <Link
-              href="#portfolio"
+              href="#carrousel"
               color="inherit"
               underline="none"
               sx={{ mr: 2 }}
             >
-              Portfolio
+              CARROUSEL
             </Link>
             <Link href="#contact" color="inherit" underline="none">
-              Contact
+              FORM VALIDATION
+            </Link>
+            <Link
+              href="#github"
+              color="inherit"
+              underline="none"
+              sx={{ ml: 2 }}
+            >
+              GITHUB CONTRIBUTIONS
             </Link>
           </nav>
         </Toolbar>
       </AppBar>
 
-      <Container>
-        <section id="about">
-          <Typography variant="h2" component="h2" sx={{ mt: 4 }}>
-            About Me
+      <Stack spacing={0}>
+        <Item id="carrousel" sx={{ height: "100vh" }}>
+          <Typography variant="h3" component="h3" sx={{ m: 4 }}>
+            Dynamic Carrousel
           </Typography>
-          <Typography variant="body1" sx={{ mt: 2 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            posuere sem at nibh feugiat blandit. Etiam tincidunt vestibulum
-            nulla sed vehicula. Ut in tellus elementum, ultricies purus eget,
-            ultricies nisi. Maecenas ultricies sapien lorem, eget ultricies enim
-            condimentum sit amet. Nulla luctus erat sed eleifend pharetra. In
-            faucibus metus urna, at pulvinar turpis aliquet sed. Class aptent
-            taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos. Morbi varius tincidunt consectetur. Nunc interdum posuere
-            dui, eget luctus arcu.Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Nulla posuere sem at nibh feugiat blandit. Etiam
-            tincidunt vestibulum nulla sed vehicula. Ut in tellus elementum,
-            ultricies purus eget, ultricies nisi. Maecenas ultricies sapien
-            lorem, eget ultricies enim condimentum sit amet. Nulla luctus erat
-            sed eleifend pharetra. In faucibus metus urna, at pulvinar turpis
-            aliquet sed. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Morbi varius tincidunt
-            consectetur. Nunc interdum posuere dui, eget luctus arcu.
-          </Typography>
-        </section>
-
-        <section id="portfolio">
+          <Gallery />
+        </Item>
+        <Item id="contact" sx={{ height: "100vh" }}>
           <Typography variant="h2" component="h2" sx={{ mt: 4 }}>
-            Portfolio
+            Dynamic Form Validation
           </Typography>
-          <Grid container spacing={2} sx={{ mt: 2 }}>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image="https://www.interviewbit.com/blog/wp-content/uploads/2022/06/How-does-Web-App-Architecture-Work-1024x450.png"
-                  alt="Project 1"
-                />
-                <CardContent>
-                  <Typography variant="h3" component="h3" gutterBottom>
-                    Project 1
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla posuere sem at nibh feugiat blandit. Etiam tincidunt
-                    vestibulum nulla sed vehicula. Ut in tellus elementum,
-                    ultricies purus eget, ultricies nisi. Maecenas ultricies
-                    sapien lorem, eget ultricies enim condimentum sit amet.
-                    Nulla luctus erat sed eleifend pharetra. In faucibus metus
-                    urna, at pulvinar turpis aliquet sed. Class aptent taciti
-                    sociosqu ad litora torquent per conubia nostra, per inceptos
-                    himenaeos. Morbi varius tincidunt consectetur. Nunc interdum
-                    posuere dui, eget luctus arcu.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image="https://reinvently.com/wp-content/uploads/2019/08/scheme.jpg"
-                  alt="Project 2"
-                />
-                <CardContent>
-                  <Typography variant="h3" component="h3" gutterBottom>
-                    Project 2
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla posuere sem at nibh feugiat blandit. Etiam tincidunt
-                    vestibulum nulla sed vehicula. Ut in tellus elementum,
-                    ultricies purus eget, ultricies nisi. Maecenas ultricies
-                    sapien lorem, eget ultricies enim condimentum sit amet.
-                    Nulla luctus erat sed eleifend pharetra. In faucibus metus
-                    urna, at pulvinar turpis aliquet sed. Class aptent taciti
-                    sociosqu ad litora torquent per conubia nostra, per inceptos
-                    himenaeos. Morbi varius tincidunt consectetur. Nunc interdum
-                    posuere dui, eget luctus arcu.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </section>
-        <section id="contact">
-          <ContactPage></ContactPage>
-        </section>
-        <section id="github-contributions">
+          <ContactForm />
+        </Item>
+        <Item id="github" sx={{ height: "100vh" }}>
           <Typography variant="h2" component="h2" sx={{ mt: 4 }}>
-            GitHub Contributions
+            Dynamic GitHub Contributions Chart
           </Typography>
           <GitHubContributions />
-        </section>
-      </Container>
+        </Item>
+      </Stack>
 
       <footer>
         <Typography variant="body2" component="p" sx={{ color: "#fff", py: 2 }}>
-          &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+          &copy; {new Date().getFullYear()} Dynamic Features. Hericlis Mindroom.
         </Typography>
       </footer>
     </div>

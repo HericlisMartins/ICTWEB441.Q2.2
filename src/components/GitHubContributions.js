@@ -4,13 +4,13 @@ import { Box, Typography } from "@mui/material";
 
 export default function App() {
   return (
-    <Box mt={10} mb={10}>
+    <Box sx={{ justifySelf: "center" }}>
       <Typography>@hericlismartins on GitHub</Typography>
       <GitHubCalendar
         loading={false}
         showWeekdayLabels={true}
         weekStart={1}
-        year={2021}
+        year={2022}
         username="hericlismartins"
         displayName="Hericlis Martins"
         colorScheme="dark"
